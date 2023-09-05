@@ -1,9 +1,11 @@
+import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
-    id("androidx.navigation.safeargs.kotlin")
+
 }
 
 android {
@@ -36,6 +38,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+
+        viewBinding = true
+
+    }
 }
 
 dependencies {
@@ -46,25 +53,43 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-firestore-ktx:24.7.1")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
-    implementation ("'com.google.firebase:firebase-crashlytics-ktx'")
+    implementation ("com.google.firebase:firebase-crashlytics-ktx")
     implementation ("com.google.firebase:firebase-analytics-ktx")
 
-    //Navigation
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.5.1")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.5.1")
+    // Firebase
+    implementation ("com.google.firebase:firebase-firestore:22.0.1")
+    implementation ("com.google.firebase:firebase-storage:19.2.1")
+    implementation ("com.google.firebase:firebase-auth:20.0.2")
 
-    //utils
-    implementation("de.hdodenhof:circleimageview:3.1.0")
-    implementation("com.github.bumptech.glide:glide:4.11.0")
-    implementation("com.github.bumptech.glide:compiler:4.11.0")
+    // Firebase Crashlytics
+    implementation ("com.google.firebase:firebase-crashlytics-ktx:17.4.1")
+    implementation ("com.google.firebase:firebase-analytics-ktx:18.0.2")
 
-    //ViewModel
+    // Navigation
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.3.3")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.3.3")
+
+    // Utils
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.github.bumptech.glide:glide:4.11.0")
+    implementation ("androidx.legacy:legacy-support-v4:1.0.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
+
+    // Viewmodel and livedata KTX
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
-    //livedata
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
 
-    //playservice coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-service:1.1.1")
+    // Play services coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1")
+
+    //Used for StateFlow
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1")
+
+    // Lifecycle
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha01")
+
+
 
 
     testImplementation("junit:junit:4.13.2")
