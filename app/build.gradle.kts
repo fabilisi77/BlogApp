@@ -4,7 +4,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
-    id("com.google.firebase.crashlytics")
+
 
 }
 
@@ -51,18 +51,15 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("com.google.firebase:firebase-firestore-ktx:24.7.1")
-    implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
-    implementation ("com.google.firebase:firebase-crashlytics-ktx")
-    implementation ("com.google.firebase:firebase-analytics-ktx")
+
 
     // Firebase
     implementation ("com.google.firebase:firebase-firestore:22.0.1")
     implementation ("com.google.firebase:firebase-storage:19.2.1")
-    implementation ("com.google.firebase:firebase-auth:20.0.2")
+    implementation("com.google.firebase:firebase-auth-ktx:22.1.1")
+
 
     // Firebase Crashlytics
-    implementation ("com.google.firebase:firebase-crashlytics-ktx:17.4.1")
     implementation ("com.google.firebase:firebase-analytics-ktx:18.0.2")
 
     // Navigation
