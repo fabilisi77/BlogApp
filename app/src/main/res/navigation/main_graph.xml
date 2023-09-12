@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_registerFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_setupProfileFragment2"
+            app:destination="@id/setupProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/cameraFragment"
@@ -45,4 +48,9 @@
         android:name="com.example.blogapp.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/setupProfileFragment"
+        android:name="com.example.blogapp.ui.auth.SetupProfileFragment"
+        android:label="fragment_setup_profile"
+        tools:layout="@layout/fragment_setup_profile" />
 </navigation>
