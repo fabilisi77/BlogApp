@@ -6,6 +6,8 @@ import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.example.blogapp.core.hide
+import com.example.blogapp.core.show
 import com.example.blogapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,15 +29,15 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
                 R.id.loginFragment -> {
-                    binding.bottomNavigationView.visibility = View.GONE
+                    binding.bottomNavigationView.hide()
                 }
 
                 R.id.registerFragment -> {
-                    binding.bottomNavigationView.visibility = View.GONE
+                    binding.bottomNavigationView.hide()
                 }
 
                 else -> {
-                    binding.bottomNavigationView.visibility = View.VISIBLE
+                    binding.bottomNavigationView.show()
                 }
             }
         }
